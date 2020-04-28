@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    password: wayne
+    username: wayne
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#redis configurations
+spring.redis:
+  host: 158.168.8.5
+  password: 654321
+  database: 0
+  port: 7100
+  lettuce:
+    pool:
+      max-active: 20
+      max-wait: -1ms
+      max-idle: 10
+      min-idle: 2
+    timeout: 1000ms
+#  pool:
+#    maxTotal:120 # 最大连接数
+#    maxIdle:30 # 最大空闲实例的个数
+#    minIdle:3 #最小空闲实例个数
+#    numTestsPerEvictionRun:1024 # 每个逐出器运行期间要检查的最大对象数
+#    timeBetweenEvictionRunsMillis:30000 # 释放扫描的扫描间隔
+#    minEvictableIdleTimeMillis:1800000 # 连接的最小空闲时间
+#    softMinEvictableIdleTimeMillis:10000 # 连接控歘按时间多久后释放，当空闲时间>该值且空闲连接>最大空闲连接数时直接释放
+#    maxWaitMillis:1500 # 获得链接时的最大等待毫秒数，小于0：阻塞不确定时间，默认-1
+#    testOnBorrow:true # 在获得链接的时候检查有效性，默认false
+#    testWhileIdle:true # 在空闲时检查有效性，默认false
+#    blockWhenExhausted:false # 连接耗尽时是否阻塞，false报异常，true阻塞超时,默认true
+#    timeOut:10000 # jedis超时时间
+#  maxRedirects:5 # RedisClusterConfiguration配置
+#  nodeCluters:192.168.98.105:7000,192.168.98.105:7001,192.168.98.105:7002,192.168.98.105:7003,192.168.98.105:7004,192.168.98.105:7005
+#  model:3 #redis的模式1 表示单机，2 表示sentinel， 3表示cluster
+
+logging:
+  level:
+    com:
+      jiahao:
+        debug
